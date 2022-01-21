@@ -190,6 +190,11 @@ public class menuJframe extends javax.swing.JFrame {
 
         jLabel_descMenu.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
+        jList5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList5MouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jList5);
 
         jButton_Bayar.setText("Bayar");
@@ -200,6 +205,11 @@ public class menuJframe extends javax.swing.JFrame {
         });
 
         jButton_Hapus.setText("Hapus");
+        jButton_Hapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_HapusActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel5.setText("Order Kami : ");
@@ -331,6 +341,7 @@ public class menuJframe extends javax.swing.JFrame {
         String nomor_table = jTextField_nomorMeja.getText();
         confirmationOrder_Jframe conf = new confirmationOrder_Jframe(nomor_table, this.jumlah, temp1);
         conf.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton_BayarActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
@@ -422,6 +433,35 @@ public class menuJframe extends javax.swing.JFrame {
             this.jumlah = this.jumlah + Integer.valueOf(jLabel_descMenu.getText());
         }
     }//GEN-LAST:event_jButton_orderActionPerformed
+
+    private void jList5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList5MouseClicked
+//        String idx = jList5.getSelectedValue();
+//        
+//        try{
+//            Statement statement = (Statement)connect.GetConnection().createStatement();
+//            ResultSet posRes1 = statement.executeQuery("SELECT harga_apetizer FROM apetizer WHERE nama_apetizer = '"+ idx +"'");
+//            ResultSet posRes2 = statement.executeQuery("SELECT harga_desert FROM desert WHERE nama_desert = '"+ idx +"'");
+//            ResultSet posRes3 = statement.executeQuery("SELECT harga_drink FROM drink WHERE nama_drink = '"+ idx +"'");
+//            ResultSet posRes4 = statement.executeQuery("SELECT harga_mainCourse FROM maincourse WHERE nama_mainCourse = '"+ idx +"'");
+//            if(posRes1.first()){
+//                jLabel_descMenu.setText(posRes1.getString("harga_apetizer"));
+//            }else if(posRes2.first()){
+//                jLabel_descMenu.setText(posRes1.getString("harga_desert"));
+//            }else if(posRes3.first()){
+//                jLabel_descMenu.setText(posRes1.getString("harga_drink"));
+//            }else if(posRes4.first()){
+//                jLabel_descMenu.setText(posRes1.getString("harga_mainCourse"));
+//            }
+//        }catch (SQLException e){
+//            JOptionPane.showMessageDialog(rootPane, "Tidak terhubung dengan server");
+//        }
+    }//GEN-LAST:event_jList5MouseClicked
+
+    private void jButton_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_HapusActionPerformed
+        DefaultListModel listModel = (DefaultListModel) jList5.getModel();
+        listModel.removeAllElements();
+        jumlah = 0;
+    }//GEN-LAST:event_jButton_HapusActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

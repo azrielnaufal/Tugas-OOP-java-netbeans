@@ -23,6 +23,7 @@ public class confirmationOrder_Jframe extends javax.swing.JFrame {
         jLabel_Pajak_answer.setText(String.valueOf(pajak));
         double total = pajak + jumlah;
         jLabel_Total_answwer.setText(String.valueOf(total));
+        jList1.setModel(temp1);
     }
 
     @SuppressWarnings("unchecked")
@@ -55,11 +56,6 @@ public class confirmationOrder_Jframe extends javax.swing.JFrame {
 
         jLabel_hiasan1.setText("---------------------------------------------------------------------");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         jLabel_HargaPesanan.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N

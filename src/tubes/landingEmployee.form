@@ -43,7 +43,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel_id_pegawai" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_nama_lengkap" min="-2" max="-2" attributes="0"/>
@@ -58,9 +58,11 @@
                               <Component id="jButton_hapus_menu" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton_nambah_menu" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonpergi_keMenu" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -87,6 +89,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton_nambah_menu" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton_hapus_menu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonpergi_keMenu" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
               <Component id="jButton_goback" min="-2" max="-2" attributes="0"/>
@@ -148,6 +151,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_hapus_menuActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonpergi_keMenu">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pergi ke menu"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonpergi_keMenuActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

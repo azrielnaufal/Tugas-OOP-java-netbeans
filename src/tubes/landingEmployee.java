@@ -32,6 +32,7 @@ public class landingEmployee extends javax.swing.JFrame {
         jLabel_id_pegawai_answer = new javax.swing.JLabel();
         jButton_nambah_menu = new javax.swing.JButton();
         jButton_hapus_menu = new javax.swing.JButton();
+        jButtonpergi_keMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +68,13 @@ public class landingEmployee extends javax.swing.JFrame {
             }
         });
 
+        jButtonpergi_keMenu.setText("Pergi ke menu");
+        jButtonpergi_keMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonpergi_keMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,8 +106,10 @@ public class landingEmployee extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton_hapus_menu)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton_nambah_menu)))
-                        .addContainerGap())))
+                                .addComponent(jButton_nambah_menu)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonpergi_keMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(222, 222, 222))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +129,8 @@ public class landingEmployee extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_nambah_menu)
-                    .addComponent(jButton_hapus_menu))
+                    .addComponent(jButton_hapus_menu)
+                    .addComponent(jButtonpergi_keMenu))
                 .addGap(74, 74, 74)
                 .addComponent(jButton_goback)
                 .addGap(43, 43, 43))
@@ -140,8 +151,15 @@ public class landingEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_nambah_menuActionPerformed
 
     private void jButton_hapus_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_hapus_menuActionPerformed
-        // TODO add your handling code here:
+        JFrame_hapusMenu hap = new JFrame_hapusMenu();
+        hap.setVisible(true);
     }//GEN-LAST:event_jButton_hapus_menuActionPerformed
+
+    private void jButtonpergi_keMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonpergi_keMenuActionPerformed
+        this.dispose();
+        menuJframe menu = new menuJframe();
+        menu.setVisible(true);
+    }//GEN-LAST:event_jButtonpergi_keMenuActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -179,6 +197,7 @@ public class landingEmployee extends javax.swing.JFrame {
     private javax.swing.JButton jButton_goback;
     private javax.swing.JButton jButton_hapus_menu;
     private javax.swing.JButton jButton_nambah_menu;
+    private javax.swing.JButton jButtonpergi_keMenu;
     private javax.swing.JLabel jLabel_id_pegawai;
     private javax.swing.JLabel jLabel_id_pegawai_answer;
     private javax.swing.JLabel jLabel_nama_lengkap;
