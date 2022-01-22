@@ -76,16 +76,15 @@ public class Jframe_nambah_menu extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton_tambah_menu)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel_nama_menu)
-                                .addComponent(jLabel_harga))
-                            .addGap(35, 35, 35)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField_nama_menu)
-                                .addComponent(jTextField_harga, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel_nama_menu)
+                            .addComponent(jLabel_harga))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField_nama_menu)
+                            .addComponent(jTextField_harga, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
+                        .addGap(33, 33, 33))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jRadioButton1)
                         .addGap(18, 18, 18)
@@ -95,6 +94,10 @@ public class Jframe_nambah_menu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jRadioButton4)))
                 .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,9 +150,6 @@ public class Jframe_nambah_menu extends javax.swing.JFrame {
         Statement statement =(Statement)connect.GetConnection().createStatement();
         String menu = jTextField_nama_menu.getText();
         String harga = jTextField_harga.getText();
-//            statement.executeUpdate("INSERT INTO table_name " + "VALUES (value1,value2,value3,...");
-//            ResultSet result=statement.executeQuery("select * from pegawai where " + "id_pegawai ='" + jTextField_idPegawai.getText() + "'");
-//            INSERT INTO `maincourse`(`nama_mainCourse`, `harga_mainCourse`) VALUES ('[value-1]','[value-2]')
             if (jRadioButton1.isSelected()){
                 statement.executeUpdate("INSERT INTO maincourse VALUES " + "('" + menu + "','" + harga + "')");
             }else if (jRadioButton2.isSelected()){

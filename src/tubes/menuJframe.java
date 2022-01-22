@@ -20,6 +20,17 @@ public class menuJframe extends javax.swing.JFrame {
         listapetizer();
         listdrink();
     }
+    public menuJframe(DefaultListModel temp, int jumlah1){
+        jumlah = 0;
+        initComponents();
+        listmain();
+        listdesert();
+        listapetizer();
+        listdrink();
+        this.temp1 = temp;
+        this.jumlah = jumlah1;
+        jList5.setModel(temp1);
+    }
     
     public void listmain(){
         DefaultListModel temp = new DefaultListModel();
@@ -116,6 +127,9 @@ public class menuJframe extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField_nomorMeja = new javax.swing.JTextField();
+        jLabel_descMenu1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,7 +200,7 @@ public class menuJframe extends javax.swing.JFrame {
         });
 
         jLabel_DetailHarga.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel_DetailHarga.setText("Detail Harga :");
+        jLabel_DetailHarga.setText("Detail Menu :");
 
         jLabel_descMenu.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
@@ -197,7 +211,7 @@ public class menuJframe extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(jList5);
 
-        jButton_Bayar.setText("Bayar");
+        jButton_Bayar.setText("konfirmasi order");
         jButton_Bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_BayarActionPerformed(evt);
@@ -214,8 +228,13 @@ public class menuJframe extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel5.setText("Order Kami : ");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Nomor Meja :");
+
+        jLabel_descMenu1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel7.setText("Harga : ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -257,16 +276,21 @@ public class menuJframe extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel6)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jLabel_descMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel_DetailHarga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel_descMenu1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel_DetailHarga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jButton_order)
                                         .addGap(52, 52, 52))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField_nomorMeja, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel_descMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField_nomorMeja, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
@@ -299,20 +323,27 @@ public class menuJframe extends javax.swing.JFrame {
                     .addComponent(jButton_order)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel_descMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField_nomorMeja, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton_Hapus)
-                            .addComponent(jButton_Bayar))))
-                .addContainerGap(56, Short.MAX_VALUE))
+                            .addComponent(jButton_Bayar))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel_descMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel_descMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_nomorMeja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,6 +384,7 @@ public class menuJframe extends javax.swing.JFrame {
             Statement statement = (Statement)connect.GetConnection().createStatement();
             ResultSet posRes = statement.executeQuery("SELECT harga_mainCourse FROM maincourse WHERE nama_mainCourse = '"+ idx +"'");
             if(posRes.next()){
+                jLabel_descMenu1.setText("- " + idx);
                 jLabel_descMenu.setText(posRes.getString("harga_mainCourse"));
             }
         }catch (SQLException e){
@@ -369,6 +401,7 @@ public class menuJframe extends javax.swing.JFrame {
             Statement statement = (Statement)connect.GetConnection().createStatement();
             ResultSet posRes = statement.executeQuery("SELECT harga_desert FROM desert WHERE nama_desert = '"+ idx +"'");
             if(posRes.next()){
+                jLabel_descMenu1.setText("- " + idx);
                 jLabel_descMenu.setText(posRes.getString("harga_desert"));
             }
         }catch (SQLException e){
@@ -386,6 +419,7 @@ public class menuJframe extends javax.swing.JFrame {
             Statement statement = (Statement)connect.GetConnection().createStatement();
             ResultSet posRes = statement.executeQuery("SELECT harga_apetizer FROM apetizer WHERE nama_apetizer = '"+ idx +"'");
             if(posRes.next()){
+                jLabel_descMenu1.setText("- " + idx);
                 jLabel_descMenu.setText(posRes.getString("harga_apetizer"));
             }
         }catch (SQLException e){
@@ -402,6 +436,7 @@ public class menuJframe extends javax.swing.JFrame {
             Statement statement = (Statement)connect.GetConnection().createStatement();
             ResultSet posRes = statement.executeQuery("SELECT harga_drink FROM drink WHERE nama_drink = '"+ idx +"'");
             if(posRes.next()){
+                jLabel_descMenu1.setText("- " + idx);
                 jLabel_descMenu.setText(posRes.getString("harga_drink"));
             }
         }catch (SQLException e){
@@ -435,26 +470,7 @@ public class menuJframe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_orderActionPerformed
 
     private void jList5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList5MouseClicked
-//        String idx = jList5.getSelectedValue();
-//        
-//        try{
-//            Statement statement = (Statement)connect.GetConnection().createStatement();
-//            ResultSet posRes1 = statement.executeQuery("SELECT harga_apetizer FROM apetizer WHERE nama_apetizer = '"+ idx +"'");
-//            ResultSet posRes2 = statement.executeQuery("SELECT harga_desert FROM desert WHERE nama_desert = '"+ idx +"'");
-//            ResultSet posRes3 = statement.executeQuery("SELECT harga_drink FROM drink WHERE nama_drink = '"+ idx +"'");
-//            ResultSet posRes4 = statement.executeQuery("SELECT harga_mainCourse FROM maincourse WHERE nama_mainCourse = '"+ idx +"'");
-//            if(posRes1.first()){
-//                jLabel_descMenu.setText(posRes1.getString("harga_apetizer"));
-//            }else if(posRes2.first()){
-//                jLabel_descMenu.setText(posRes1.getString("harga_desert"));
-//            }else if(posRes3.first()){
-//                jLabel_descMenu.setText(posRes1.getString("harga_drink"));
-//            }else if(posRes4.first()){
-//                jLabel_descMenu.setText(posRes1.getString("harga_mainCourse"));
-//            }
-//        }catch (SQLException e){
-//            JOptionPane.showMessageDialog(rootPane, "Tidak terhubung dengan server");
-//        }
+        //code
     }//GEN-LAST:event_jList5MouseClicked
 
     private void jButton_HapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_HapusActionPerformed
@@ -506,8 +522,10 @@ public class menuJframe extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel_DetailHarga;
     private javax.swing.JLabel jLabel_descMenu;
+    private javax.swing.JLabel jLabel_descMenu1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
@@ -520,6 +538,7 @@ public class menuJframe extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField_nomorMeja;
     private javax.swing.JLabel label_menuKami;
