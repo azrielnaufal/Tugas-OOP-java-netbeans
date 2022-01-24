@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tubes;
 
 import java.util.*;
 
-/**
- *
- * @author ASUS
- */
 public class order {
     int No_Order;
     int table;

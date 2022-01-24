@@ -162,7 +162,7 @@ public class Jframe_nambah_menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "menu berhasil ditambahkan");
             this.dispose();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(rootPane, "gagal");
+            JOptionPane.showMessageDialog(rootPane, "gagal menghubung database");
         }
     }//GEN-LAST:event_jButton_tambah_menuActionPerformed
 
